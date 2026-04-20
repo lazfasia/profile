@@ -199,9 +199,10 @@ code {
 
 h1 {
   margin: 0;
-  font-size: clamp(2.4rem, 4vw, 4.7rem);
-  line-height: 1.12;
+  font-size: clamp(2.3rem, 3.45vw, 4.15rem);
+  line-height: 1.16;
   letter-spacing: -0.06em;
+  word-break: keep-all;
 }
 
 .hero-sub {
@@ -920,12 +921,12 @@ section {
 
   .nav-links a {
     flex: 0 0 auto;
-    padding: 9px 12px;
+    padding: 10px 12px;
     font-size: 13px;
   }
 
   .hero {
-    padding-top: 18px;
+    padding-top: 14px;
   }
 
   .hero-copy,
@@ -953,18 +954,28 @@ section {
     gap: 16px;
   }
 
+  .hero-copy {
+    order: 1;
+  }
+
+  .hero-visual {
+    order: 2;
+    padding-top: 16px;
+  }
+
   .brand {
     gap: 10px;
   }
 
   h1 {
-    font-size: clamp(2rem, 11vw, 3rem);
-    line-height: 1.16;
+    font-size: clamp(1.9rem, 9.6vw, 2.7rem);
+    line-height: 1.22;
   }
 
   .hero-sub {
-    font-size: 0.98rem;
-    line-height: 1.75;
+    font-size: 0.95rem;
+    line-height: 1.72;
+    max-width: none;
   }
 
   .hero-actions {
@@ -986,8 +997,8 @@ section {
 
   .photo-frame {
     width: 100%;
-    max-width: 420px;
-    aspect-ratio: 4 / 4.9;
+    max-width: 320px;
+    aspect-ratio: 4 / 4.35;
     margin: 0 auto;
   }
 
@@ -1119,8 +1130,10 @@ section {
   }
 
   .eyebrow {
-    font-size: 12px;
+    font-size: 11px;
     padding: 7px 12px;
+    line-height: 1.35;
+    max-width: 100%;
   }
 
   .hero-copy,
@@ -1167,10 +1180,11 @@ section {
   }
 
   .photo-frame {
-    aspect-ratio: 4 / 5.2;
+    max-width: 290px;
+    aspect-ratio: 4 / 4.2;
   }
 
   .photo-badge strong {
-    font-size: 1rem;
+    font-size: 0.92rem;
   }
 }
