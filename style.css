@@ -937,6 +937,29 @@ section {
   pointer-events: auto;
 }
 
+.copy-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%) translateY(20px);
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: rgba(23, 50, 83, 0.92);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 12px 28px rgba(4, 10, 22, 0.22);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.24s ease, transform 0.24s ease;
+  z-index: 80;
+}
+
+.copy-toast.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 body.print-mode .timeline-card,
 body.print-mode .case-card {
   transform: none !important;

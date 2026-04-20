@@ -4,6 +4,7 @@ const progressFill = document.getElementById("progressFill");
 const toTop = document.getElementById("toTop");
 const downloadPdfButton = document.getElementById("downloadPdfButton");
 const copyTelegramId = document.getElementById("copyTelegramId");
+const copyToast = document.getElementById("copyToast");
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
@@ -137,10 +138,10 @@ copyTelegramId?.addEventListener("click", async () => {
   const telegramUrl = "https://t.me/swlee_builder";
   try {
     await navigator.clipboard.writeText(telegramUrl);
-    copyTelegramId.textContent = "복사 완료";
+    copyToast?.classList.add("is-visible");
     setTimeout(() => {
-      copyTelegramId.textContent = "아이디 복사";
-    }, 1500);
+      copyToast?.classList.remove("is-visible");
+    }, 1600);
   } catch (error) {
     window.prompt("이 링크를 복사하세요", telegramUrl);
   }
