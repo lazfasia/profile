@@ -1015,15 +1015,31 @@ section {
   .photo-frame {
     width: 100%;
     max-width: 344px;
-    aspect-ratio: 4 / 4.75;
+    aspect-ratio: auto;
     margin: 0 auto;
+    padding: 10px;
+    border-radius: 26px;
+    transform: none !important;
+  }
+
+  .photo-frame::before,
+  .photo-frame::after {
+    display: none;
+  }
+
+  .photo-inner {
+    aspect-ratio: 4 / 4.65;
+    border-radius: 20px;
   }
 
   .photo-badge {
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-    padding: 14px 16px;
+    position: static;
+    margin-top: 10px;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    padding: 12px 14px;
+    border-radius: 16px;
   }
 
   .photo-badge strong {
@@ -1036,9 +1052,14 @@ section {
     align-items: flex-start;
   }
 
+  .section-head > div {
+    width: 100%;
+  }
+
   .section-head h2 {
     font-size: clamp(1.55rem, 7.2vw, 2.05rem);
     text-align: left;
+    width: 100%;
   }
 
   .summary-card,
@@ -1226,7 +1247,11 @@ section {
 
   .photo-frame {
     max-width: 300px;
-    aspect-ratio: 4 / 4.7;
+    padding: 8px;
+  }
+
+  .photo-inner {
+    aspect-ratio: 4 / 4.55;
   }
 
   .timeline::before {
