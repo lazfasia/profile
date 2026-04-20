@@ -124,6 +124,8 @@ window.addEventListener("afterprint", cleanupPrintLayout);
 
 downloadPdfButton?.addEventListener("click", () => {
   preparePrintLayout();
+  // Force reflow so expanded cards are fully laid out before the print dialog snapshots the page.
+  void document.body.offsetHeight;
   window.print();
   setTimeout(() => {
     cleanupPrintLayout();

@@ -926,10 +926,17 @@ body.print-mode .case-body {
   overflow: visible !important;
 }
 
+body.print-mode .case-card,
+body.print-mode .timeline-card,
+body.print-mode .cases,
+body.print-mode .timeline {
+  overflow: visible !important;
+}
+
 body.print-mode .timeline-card,
 body.print-mode .case-card {
-  page-break-inside: avoid;
-  break-inside: avoid;
+  page-break-inside: auto;
+  break-inside: auto;
 }
 
 body.print-mode .timeline-card,
@@ -952,7 +959,10 @@ body.print-mode .contact-card {
 @media print {
   html,
   body {
-    background: #ffffff !important;
+    background:
+      radial-gradient(circle at 10% 15%, rgba(131, 186, 255, 0.28), transparent 24%),
+      radial-gradient(circle at 88% 20%, rgba(170, 218, 255, 0.2), transparent 26%),
+      linear-gradient(180deg, #eef5ff, #dcecff 50%, #c9ddfb) !important;
     color: #172d4a !important;
   }
 
@@ -1001,9 +1011,9 @@ body.print-mode .contact-card {
   .pill,
   .chip,
   .stat {
-    background: #ffffff !important;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(232, 242, 255, 0.72)) !important;
     border-color: rgba(102, 125, 156, 0.22) !important;
-    box-shadow: none !important;
+    box-shadow: 0 6px 18px rgba(94, 130, 182, 0.08) !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
   }
@@ -1085,6 +1095,8 @@ body.print-mode .contact-card {
 
   .timeline-card {
     padding: 4mm !important;
+    page-break-inside: auto;
+    break-inside: auto;
   }
 
   .timeline-dot {
@@ -1114,6 +1126,27 @@ body.print-mode .contact-card {
 
   .case-body {
     grid-template-columns: repeat(2, 1fr) !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .case-card {
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+    overflow: visible !important;
+  }
+
+  .case-block,
+  .timeline-news__item,
+  .strength-card,
+  .domain-card,
+  .skill-card,
+  .metric-item,
+  .summary-card,
+  .metrics-card,
+  .contact-card {
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   .contact-content {
