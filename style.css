@@ -246,6 +246,12 @@ h1 {
   transition: transform 0.22s ease, background 0.22s ease, border-color 0.22s ease;
 }
 
+button.btn {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
 .btn:hover,
 .btn:focus-visible {
   transform: translateY(-2px);
@@ -903,6 +909,222 @@ section {
   pointer-events: auto;
 }
 
+body.print-mode .timeline-card,
+body.print-mode .case-card {
+  transform: none !important;
+}
+
+body.print-mode .timeline-content,
+body.print-mode .case-body {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+body.print-mode .timeline-card,
+body.print-mode .case-card {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+body.print-mode .timeline-card,
+body.print-mode .case-card,
+body.print-mode .summary-card,
+body.print-mode .metrics-card,
+body.print-mode .strength-card,
+body.print-mode .domain-card,
+body.print-mode .skill-card,
+body.print-mode .value-card,
+body.print-mode .contact-card {
+  box-shadow: none;
+}
+
+@page {
+  size: A4;
+  margin: 14mm 12mm;
+}
+
+@media print {
+  html,
+  body {
+    background: #ffffff !important;
+    color: #172d4a !important;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-size: 11pt;
+  }
+
+  body::before,
+  body::after,
+  .progress-rail,
+  .to-top,
+  .topbar,
+  .toggle,
+  .photo-frame::before,
+  .photo-frame::after {
+    display: none !important;
+  }
+
+  .container {
+    width: 100%;
+    max-width: none;
+  }
+
+  .glass,
+  .summary-card,
+  .metrics-card,
+  .strength-card,
+  .case-card,
+  .domain-card,
+  .skill-card,
+  .value-card,
+  .contact-card,
+  .timeline-card,
+  .metric-item,
+  .case-block,
+  .contact-item,
+  .timeline-news__item,
+  .photo-badge,
+  .pill,
+  .chip,
+  .stat {
+    background: #ffffff !important;
+    border-color: rgba(102, 125, 156, 0.22) !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .hero {
+    padding: 0 0 8mm;
+  }
+
+  .hero-grid,
+  .summary-grid,
+  .skill-grid,
+  .domain-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-visual {
+    min-height: auto;
+    padding: 0;
+  }
+
+  .photo-frame {
+    width: 84mm;
+    margin: 0 auto 6mm;
+    padding: 0;
+    border: 0;
+    background: none !important;
+  }
+
+  .photo-inner {
+    aspect-ratio: 4 / 5;
+    border-radius: 6mm;
+    overflow: hidden;
+  }
+
+  .photo-inner img {
+    object-position: center 28%;
+  }
+
+  .photo-badge {
+    position: static;
+    margin-top: 4mm;
+    padding: 3.5mm 4mm;
+  }
+
+  h1 {
+    font-size: 24pt !important;
+    line-height: 1.24 !important;
+  }
+
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 2mm;
+    margin-bottom: 4mm;
+  }
+
+  .section-head p {
+    white-space: normal !important;
+    text-align: left !important;
+    width: 100%;
+    font-size: 10pt;
+  }
+
+  .hero-actions {
+    display: none !important;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .strength-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .timeline-card {
+    padding: 4mm !important;
+  }
+
+  .timeline-dot {
+    display: none;
+  }
+
+  .timeline-meta {
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+
+  .timeline-content {
+    margin-top: 3mm;
+  }
+
+  .timeline-news {
+    grid-template-columns: 1fr !important;
+  }
+
+  .timeline-news__item {
+    grid-template-columns: 26mm 1fr !important;
+  }
+
+  .timeline-news__item img {
+    height: 19mm !important;
+  }
+
+  .case-body {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr !important;
+    justify-items: flex-start;
+  }
+
+  .contact-qr {
+    justify-items: flex-start;
+  }
+
+  .contact-qr__frame {
+    width: 42mm;
+    padding: 2.5mm;
+  }
+
+  .footer {
+    padding-top: 6mm;
+    color: rgba(23, 50, 83, 0.7) !important;
+  }
+}
+
 @media (max-width: 1120px) {
   .hero-grid,
   .summary-grid,
@@ -1053,6 +1275,10 @@ section {
   }
 
   .btn {
+    width: 100%;
+  }
+
+  .btn-download {
     width: 100%;
   }
 

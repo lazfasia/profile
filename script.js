@@ -2,6 +2,7 @@ const sections = [...document.querySelectorAll("section[id]")];
 const navLinks = [...document.querySelectorAll("#navLinks a")];
 const progressFill = document.getElementById("progressFill");
 const toTop = document.getElementById("toTop");
+const downloadPdfButton = document.getElementById("downloadPdfButton");
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
@@ -113,3 +114,27 @@ const countObserver = new IntersectionObserver(
 );
 
 document.querySelectorAll("[data-count]").forEach((el) => countObserver.observe(el));
+
+const preparePrintLayout = () => {
+  document.body.classList.add("print-mode");
+  document.querySelectorAll(".timeline-card, .case-card").forEach((card) => {
+    card.classList.add("open");
+  });
+};
+
+const cleanupPrintLayout = () => {
+  document.body.classList.remove("print-mode");
+};
+
+window.addEventListener("beforeprint", preparePrintLayout);
+window.addEventListener("afterprint", cleanupPrintLayout);
+
+downloadPdfButton?.addEventListener("click", () => {
+  preparePrintLayout();
+  setTimeout(() => {
+    window.print();
+  }, 80);
+  setTimeout(() => {
+    cleanupPrintLayout();
+  }, 1200);
+});
