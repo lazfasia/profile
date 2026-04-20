@@ -1600,7 +1600,7 @@ body.print-mode .contact-card {
   }
 
   .case-top > div:first-child {
-    padding-right: 62px;
+    padding-right: 72px;
   }
 
   .toggle {
@@ -1619,12 +1619,15 @@ body.print-mode .contact-card {
 
   .case-tags {
     margin-top: 10px;
+    padding-right: 4px;
   }
 
   .case-tags .pill {
     max-width: 100%;
     white-space: normal;
     line-height: 1.35;
+    font-size: 13px;
+    padding: 8px 10px;
   }
 
   .photo-frame {
