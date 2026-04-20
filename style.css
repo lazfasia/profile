@@ -163,7 +163,7 @@ code {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.18fr 0.82fr;
   gap: 28px;
   align-items: stretch;
 }
@@ -199,10 +199,11 @@ code {
 
 h1 {
   margin: 0;
-  font-size: clamp(2.3rem, 3.45vw, 4.15rem);
+  font-size: clamp(2.2rem, 3vw, 3.8rem);
   line-height: 1.16;
   letter-spacing: -0.06em;
   word-break: keep-all;
+  text-wrap: balance;
 }
 
 .hero-sub {
@@ -211,6 +212,18 @@ h1 {
   color: var(--muted);
   line-height: 1.7;
   max-width: 62ch;
+}
+
+@media (min-width: 1024px) and (max-width: 1500px) {
+  h1 {
+    font-size: 3.55rem;
+    line-height: 1.18;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1.22fr 0.78fr;
+    gap: 24px;
+  }
 }
 
 .hero-actions {
