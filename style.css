@@ -844,6 +844,10 @@ section {
     grid-template-columns: 1fr;
   }
 
+  .hero-grid {
+    gap: 20px;
+  }
+
   .strength-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -862,16 +866,19 @@ section {
 
   .hero-visual {
     min-height: auto;
+    order: -1;
   }
 
   .section-head {
     align-items: end;
+    flex-direction: column;
   }
 
   .section-head p {
     white-space: normal;
     text-align: left;
     line-height: 1.7;
+    width: 100%;
   }
 
   .contact-content {
@@ -885,22 +892,40 @@ section {
   }
 
   .topbar {
-    top: 8px;
-    padding-top: 8px;
+    top: 0;
+    padding-top: 0;
   }
 
   .nav-shell {
-    border-radius: 28px;
-    align-items: flex-start;
+    border-radius: 0 0 24px 24px;
+    align-items: stretch;
     flex-direction: column;
+    gap: 12px;
+    padding: 12px 14px 14px;
   }
 
   .nav-links {
     justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    flex: 0 0 auto;
+    padding: 9px 12px;
+    font-size: 13px;
   }
 
   .hero {
-    padding-top: 26px;
+    padding-top: 18px;
   }
 
   .hero-copy,
@@ -924,11 +949,228 @@ section {
     grid-template-columns: 1fr;
   }
 
+  .hero-grid {
+    gap: 16px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 11vw, 3rem);
+    line-height: 1.16;
+  }
+
+  .hero-sub {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .hero-stats {
+    gap: 12px;
+  }
+
+  .stat {
+    padding: 16px;
+  }
+
   .photo-frame {
     width: 100%;
+    max-width: 420px;
+    aspect-ratio: 4 / 4.9;
+    margin: 0 auto;
+  }
+
+  .photo-badge {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 14px 16px;
+  }
+
+  .section-head {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.45rem, 7vw, 2rem);
+  }
+
+  .summary-card,
+  .metrics-card,
+  .strength-card,
+  .case-card,
+  .domain-card,
+  .skill-card,
+  .value-card,
+  .contact-card,
+  .timeline-card {
+    border-radius: 18px;
+  }
+
+  .strength-card {
+    min-height: auto;
+  }
+
+  .timeline::before {
+    left: 20px;
+    top: 12px;
+    bottom: 12px;
+  }
+
+  .timeline-card {
+    padding-left: 58px;
+  }
+
+  .timeline-dot {
+    left: 10px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 0 6px rgba(93, 159, 255, 0.08);
+  }
+
+  .timeline-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .timeline-content {
+    max-height: 120px;
+  }
+
+  .timeline-card.open .timeline-content {
+    max-height: 320px;
+  }
+
+  .case-top {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .case-top h3 {
+    font-size: 1rem;
+  }
+
+  .case-card.open .case-body {
+    max-height: 1800px;
+  }
+
+  .skill-stack,
+  .pill-row,
+  .case-tags,
+  .chips {
+    gap: 8px;
+  }
+
+  .contact-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .contact-content {
+    gap: 14px;
+  }
+
+  .contact-qr__frame {
+    width: min(100%, 280px);
+    padding: 16px;
+  }
+
+  .value-card .quote {
+    font-size: clamp(1.15rem, 6vw, 1.6rem);
+    line-height: 1.55;
   }
 
   .progress-rail {
     display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .container {
+    width: min(calc(100% - 18px), var(--max));
+  }
+
+  .nav-shell {
+    padding: 10px 12px 12px;
+  }
+
+  .brand-mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    font-size: 13px;
+  }
+
+  .brand-sub {
+    font-size: 11px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    padding: 7px 12px;
+  }
+
+  .hero-copy,
+  .hero-visual,
+  .summary-card,
+  .metrics-card,
+  .strength-card,
+  .case-card,
+  .domain-card,
+  .skill-card,
+  .value-card,
+  .contact-card,
+  .timeline-card {
+    padding: 16px;
+  }
+
+  .hero-sub,
+  .summary-card p,
+  .value-card p,
+  .contact-card p,
+  .timeline-content p,
+  .case-body p,
+  .strength-card p,
+  .domain-card p,
+  .skill-card p {
+    font-size: 14px;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-item,
+  .stat,
+  .case-block,
+  .contact-item {
+    padding: 14px;
+  }
+
+  .chip,
+  .pill {
+    font-size: 12px;
+    padding: 8px 11px;
+  }
+
+  .photo-frame {
+    aspect-ratio: 4 / 5.2;
+  }
+
+  .photo-badge strong {
+    font-size: 1rem;
   }
 }
