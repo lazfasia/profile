@@ -124,9 +124,7 @@ window.addEventListener("afterprint", cleanupPrintLayout);
 
 downloadPdfButton?.addEventListener("click", () => {
   preparePrintLayout();
-  setTimeout(() => {
-    window.print();
-  }, 80);
+  window.print();
   setTimeout(() => {
     cleanupPrintLayout();
   }, 1200);
