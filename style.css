@@ -637,6 +637,7 @@ section {
   height: 78px;
   object-fit: cover;
   border-radius: 12px;
+  background: rgba(255, 255, 255, 0.82);
 }
 
 .timeline-news__body {

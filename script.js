@@ -42,14 +42,7 @@ syncActiveNav();
 syncProgress();
 
 document.querySelectorAll(".timeline-card").forEach((card) => {
-  const toggle = () => card.classList.toggle("open");
-  card.addEventListener("click", toggle);
-  card.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      toggle();
-    }
-  });
+  card.classList.add("open");
 });
 
 document.querySelectorAll(".case-card").forEach((card) => {
