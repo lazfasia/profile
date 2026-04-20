@@ -368,7 +368,7 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 24%;
+  object-position: center 34%;
 }
 
 .photo-badge {
@@ -888,6 +888,10 @@ section {
     flex-direction: column;
   }
 
+  .section-head > div {
+    width: 100%;
+  }
+
   .section-head p {
     white-space: normal;
     text-align: left;
@@ -1029,10 +1033,12 @@ section {
   .section-head {
     gap: 10px;
     margin-bottom: 16px;
+    align-items: flex-start;
   }
 
   .section-head h2 {
     font-size: clamp(1.55rem, 7.2vw, 2.05rem);
+    text-align: left;
   }
 
   .summary-card,
@@ -1058,12 +1064,13 @@ section {
   }
 
   .timeline-card {
-    padding-left: 58px;
+    padding-left: 22px;
+    padding-top: 54px;
   }
 
   .timeline-dot {
-    left: 10px;
-    top: 20px;
+    left: 18px;
+    top: 16px;
     width: 20px;
     height: 20px;
     box-shadow: 0 0 0 6px rgba(93, 159, 255, 0.08);
@@ -1073,10 +1080,12 @@ section {
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
+    padding-left: 0;
   }
 
   .timeline-content {
     max-height: 120px;
+    margin-top: 12px;
   }
 
   .timeline-card.open .timeline-content {
@@ -1176,7 +1185,7 @@ section {
   .strength-card p,
   .domain-card p,
   .skill-card p {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.8;
   }
 
@@ -1186,7 +1195,7 @@ section {
   .case-top p,
   .contact-qr span,
   .brand-sub {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .brand {
@@ -1211,13 +1220,28 @@ section {
 
   .chip,
   .pill {
-    font-size: 13px;
+    font-size: 14px;
     padding: 9px 12px;
   }
 
   .photo-frame {
     max-width: 300px;
     aspect-ratio: 4 / 4.7;
+  }
+
+  .timeline::before {
+    left: 16px;
+  }
+
+  .timeline-card {
+    padding: 50px 16px 16px 16px;
+  }
+
+  .timeline-dot {
+    left: 12px;
+    top: 14px;
+    width: 18px;
+    height: 18px;
   }
 
   .photo-badge strong {
