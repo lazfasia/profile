@@ -668,12 +668,17 @@
           <div class="contact-grid">
             <article class="contact-card glass reveal">
               <h3>커피한잔 어떠세요?</h3>
-              <p>텔레그램 QR 을 스캔 또는 터치(클릭) 해주세요.</p>
+              <p>텔레그램 QR을 스캔하거나 버튼을 눌러 주세요. 인앱 브라우저에서는 링크 복사가 더 안정적일 수 있습니다.</p>
               <div class="contact-content">
                 <div class="contact-qr">
-                  <a class="contact-qr__frame" href="https://t.me/swlee_builder" target="_blank" rel="noopener noreferrer" aria-label="텔레그램 새 창 열기">
+                  <a class="contact-qr__frame" href="https://t.me/swlee_builder" aria-label="텔레그램 열기">
                     <img src="./assets/telegram.png" alt="텔레그램 QR 코드" />
                   </a>
+                  <div class="contact-qr__actions">
+                    <a class="btn glass contact-qr__button" href="https://t.me/swlee_builder">텔레그램 열기</a>
+                    <button class="btn glass contact-qr__button" type="button" id="copyTelegramId">아이디 복사</button>
+                  </div>
+                  <p class="contact-qr__hint">@swlee_builder</p>
                   <span>Telegram QR</span>
                 </div>
               </div>

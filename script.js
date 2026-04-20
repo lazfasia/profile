@@ -3,6 +3,7 @@ const navLinks = [...document.querySelectorAll("#navLinks a")];
 const progressFill = document.getElementById("progressFill");
 const toTop = document.getElementById("toTop");
 const downloadPdfButton = document.getElementById("downloadPdfButton");
+const copyTelegramId = document.getElementById("copyTelegramId");
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
@@ -130,4 +131,17 @@ downloadPdfButton?.addEventListener("click", () => {
   setTimeout(() => {
     cleanupPrintLayout();
   }, 1200);
+});
+
+copyTelegramId?.addEventListener("click", async () => {
+  const telegramUrl = "https://t.me/swlee_builder";
+  try {
+    await navigator.clipboard.writeText(telegramUrl);
+    copyTelegramId.textContent = "복사 완료";
+    setTimeout(() => {
+      copyTelegramId.textContent = "아이디 복사";
+    }, 1500);
+  } catch (error) {
+    window.prompt("이 링크를 복사하세요", telegramUrl);
+  }
 });
